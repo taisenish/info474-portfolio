@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../sketches"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "sketches"
+	}
+}
