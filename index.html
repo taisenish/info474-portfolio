@@ -50,19 +50,21 @@
       <div id="sketch-drawing-sk2" class="sketch-evolution">
         <!-- Project narrative template: replace the text below with your own narrative -->
         <div class="sketch-narrative" aria-labelledby="sk2-narrative-title">
-          <h3 id="sk2-narrative-title">Sketch narrative (replace this and add to the other two sketches!)</h3>
-          <p class="small-note">Replace this entire block with your own text when submitting.</p>
+          <h3 id="sk2-narrative-title">Sketch Narrative - Bar Chart Clock</h3>
+    
           <p>
-            Context: Briefly describe the situation or user need this sketch addresses. For example,
-            "This sketch visualizes sunrise/sunset behavior for a simple teaching demo on coordinate
-            systems and interaction." Keep it short — 1–2 sentences.
+            This sketch explores representing time using a horizontal bar chart rather than a traditional clock. 
+The visualization is intended for students or people working in timed sessions, similar to a Pomodoro timer, 
+where it is useful to quickly understand how much time has passed during a task.
           <ul>
-            <li><strong>Context:</strong> Who is this for? In what context will it be used? (e.g., mountain, pomodoro,
-              running, cooking, breathing?)</li>
-            <li><strong>Design decisions:</strong> Explain 2–3 key choices you made (layout, color, interaction) and why
-              you made them. Use plain language and reference any constraints (time, accessibility,
-              or target device).</li>
-            <li><strong>Future work:</strong> 1–2 ideas for improvements or extensions.</li>
+            <li><strong>Context:</strong> This clock is designed for studying or focused work sessions. Instead of reading numbers or clock hands, users can quickly 
+              see the passage of time through the length of bars representing hours and minutes.</li>
+            <li><strong>Design decisions:</strong> A horizontal bar chart was chosen because bar length is a clear visual encoding for progress. Each bar represents a unit of time, 
+              and the increasing length communicates how much time has passed. Distinct colors were used to help differentiate the time units 
+              and improve readability.</li>
+            <li><strong>Future work:</strong> In future versions, the bars will update dynamically using the <code>hour()</code>, <code>minute()</code>, and <code>second()</code> 
+              functions so the chart reflects the current time. Additional improvements could include animation or interaction such as hovering 
+              over bars to reveal the exact time.</li>
           </ul>
           </p>
         </div>

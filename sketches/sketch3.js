@@ -1,14 +1,23 @@
-// Instance-mode sketch for tab 3
-registerSketch('sk3', function (p) {
-  p.setup = function () {
-    p.createCanvas(p.windowWidth, p.windowHeight);
+registerSketch('sk3', function(p) {
+
+  p.setup = function() {
+    p.createCanvas(400, 400);
   };
-  p.draw = function () {
-    p.background(240, 200, 200);
-    p.fill(180, 60, 60);
-    p.textSize(32);
-    p.textAlign(p.CENTER, p.CENTER);
-    p.text('HWK #4. B', p.width / 2, p.height / 2);
+
+  p.draw = function() {
+    p.background(220);
+
+    const x = p.width / 2;
+    const y = p.height / 2;
+
+    // Outer ring outline
+    p.noFill();
+    p.stroke(0);
+    p.strokeWeight(2);
+    p.circle(x, y, 200);
+
+    // Inner ring outline
+    p.circle(x, y, 150);
   };
-  p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
+
 });
