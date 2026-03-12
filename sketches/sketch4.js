@@ -1,14 +1,58 @@
-// Instance-mode sketch for tab 4
-registerSketch('sk4', function (p) {
+const sketch4 = (p) => {
   p.setup = function () {
-    p.createCanvas(p.windowWidth, p.windowHeight);
+    p.createCanvas(800, 800);
+    p.angleMode(p.DEGREES);
   };
+
   p.draw = function () {
-    p.background(200, 240, 200);
-    p.fill(30, 120, 40);
-    p.textSize(32);
-    p.textAlign(p.CENTER, p.CENTER);
-    p.text('HWK #4. C', p.width / 2, p.height / 2);
+    p.background(245, 240, 235);
+
+    let cx = p.width / 2;
+    let cy = p.height / 2 - 80;
+
+    drawBaseFlower(cx, cy);
   };
-  p.windowResized = function () { p.resizeCanvas(p.windowWidth, p.windowHeight); };
-});
+
+  function drawBaseFlower(x, y) {
+    // stem
+    p.stroke(70, 140, 90);
+    p.strokeWeight(8);
+    p.line(x, y + 40, x, y + 220);
+
+    // leaves
+    p.noStroke();
+    p.fill(90, 170, 110);
+    p.ellipse(x - 35, y + 140, 50, 25);
+    p.ellipse(x + 35, y + 175, 50, 25);
+
+    // petals
+    p.push();
+    p.translate(x, y);
+
+    for (let i = 0; i < 4; i++) {
+      p.rotate(90);
+      p.fill(160, 190, 235);
+      p.stroke(120, 150, 210);
+      p.strokeWeight(2);
+      drawPetal();
+    }
+
+    p.pop();
+
+    // center
+    p.fill(245, 210, 60);
+    p.stroke(200, 170, 40);
+    p.strokeWeight(2);
+    p.circle(x, y, 50);
+  }
+
+  function drawPetal() {
+    p.beginShape();
+    p.vertex(0, 0);
+    p.bezierVertex(-18, -25, -20, -80, 0, -105);
+    p.bezierVertex(20, -80, 18, -25, 0, 0);
+    p.endShape(p.CLOSE);
+  }
+};
+
+new p5(sketch4, "sketch-container-sk4");
