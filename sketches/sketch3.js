@@ -10,42 +10,30 @@ registerSketch('sk3', function(p) {
     const x = p.width / 2;
     const y = p.height / 2;
 
-    let hr = p.hour();
-    let min = p.minute();
-    let sec = p.second();
+    // outer ring
+    p.noFill();
+    p.stroke(0);
+    p.strokeWeight(2);
+    p.circle(x, y, 200);
 
-    let angle = p.map(sec, 0, 60, -p.HALF_PI, p.TWO_PI - p.HALF_PI);
+    // inner ring
+    p.circle(x, y, 150);
 
-    // outer progress ring
+    // blue progress section
     p.noStroke();
     p.fill(0, 120, 255);
-    p.arc(x, y, 200, 200, -p.HALF_PI, angle, p.PIE);
+    p.arc(x, y, 200, 200, -p.HALF_PI, -p.HALF_PI + p.PI / 3, p.PIE);
 
-    // hollow center
+    // cut out the middle so it stays hollow
     p.fill(220);
     p.circle(x, y, 150);
 
-    // ring outlines
+    // redraw outlines on top
     p.noFill();
     p.stroke(0);
     p.strokeWeight(2);
     p.circle(x, y, 200);
     p.circle(x, y, 150);
-
-    // time label with seconds
-    p.noStroke();
-    p.fill(0);
-    p.textAlign(p.CENTER, p.CENTER);
-
-    p.textSize(24);
-    p.text(
-      p.nf(hr, 2) + ":" + p.nf(min, 2) + ":" + p.nf(sec, 2),
-      x,
-      y - 10
-    );
-
-    p.textSize(16);
-    p.text("seconds", x, y + 22);
   };
 
 });
